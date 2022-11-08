@@ -71,7 +71,9 @@ squared_numbers = square(numbers)
 
 ##### Find the most frequent element in a list #####
 
-test = [6, 2, 3, 5, 6, 7, 2, 2, 3, 4, 9, 2]
-most_frequent = max(set(test), key = test.count)
-
-print(most_frequent)
+# test = [6, 2, 3, 5, 6, 7, 2, 2, 3, 4, 9, 2]
+# most_frequent = max(set(test), key = test.count)
+# 
+# print(most_frequent)
+ 
+######################################
