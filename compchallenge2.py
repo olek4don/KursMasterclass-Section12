@@ -32,3 +32,44 @@ exits = {0: {"Q": 0},
          3: {"W": 1, "Q": 0},
          4: {"N": 1, "W": 2, "Q": 0},
          5: {"W": 2, "S": 1, "Q": 0}}
+
+
+loc = 1
+forest = [locations[xit] for xit in exits if loc in exits[xit].values()]
+print(forest)
+
+forest = []
+for xit in exits:
+    if loc in exits[xit].values():
+        forest.append(locations[xit])
+print(forest)
+
+print()
+
+# for loc in sorted(locations):
+#     forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
+#     print(f"Locations leading to {loc}", end = '\t')
+#     print(forest)
+
+for loc in sorted(locations):
+    forest = []
+    for xit in exits:
+        if loc in exits[xit].values():
+            forest.append((xit, locations[xit]))
+    print(f"Locations leading to {loc}", end = '\t')
+    print(forest)
+    
+
+##### my trashes ;) #####
+
+# l = 5
+# forest_loc = [locations[exits[x]] for x in exits.keys() if l in exits[x].values()]
+
+# print(forest_loc)
+
+# x = {locations.keys():locations.values()}
+# print(x)
+
+# for x in exits.values():
+#     for y in x.values():
+#         print(y)

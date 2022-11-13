@@ -77,3 +77,10 @@ squared_numbers = square(numbers)
 # print(most_frequent)
  
 ######################################
+
+# numbers = [1,2,3,1,2,3,1,2,3]
+# d = {k:k**2 for k in numbers if k%2==1}
+# 
+# print(d)
+
+######################################
