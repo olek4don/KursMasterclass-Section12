@@ -46,10 +46,10 @@ print(forest)
 
 print()
 
-# for loc in sorted(locations):
-#     forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
-#     print(f"Locations leading to {loc}", end = '\t')
-#     print(forest)
+for loc in sorted(locations):
+    forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
+    print(f"Locations leading to {loc}", end = '\t')
+    print(forest)
 
 for loc in sorted(locations):
     forest = []
