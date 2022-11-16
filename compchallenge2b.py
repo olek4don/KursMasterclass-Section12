@@ -38,13 +38,19 @@ exits = {0: {"Q": 0},
 
 
 def nested_loop():
+    result = []
     for loc in sorted(locations):
         exits_to_destination_1 = []
         for xit in exits:
             if loc in exits[xit].values():
                 exits_to_destination_1.append((xit, locations[xit]))
-        print(f"locations leading to {loc}", end='\t')
-        print(exits_to_destination_1)
+        result.append(exits_to_destination_1)        
+    # print result before returning
+    for x in result:
+        pass
+    
+    return result
+
 # """
 # print()
 
@@ -54,11 +60,17 @@ def nested_loop():
 
 
 def loop_comp():
+    result = []
     for loc in sorted(locations):
         exits_to_destination_2 = [(xit, locations[xit])
                                 for xit in exits if loc in exits[xit].values()]
-        print(f"Locations leading to {loc}", end='\t')
-        print(exits_to_destination_2)
+        result.append(exits_to_destination_2)
+    # print result before returning
+    for x in result:
+        pass
+
+    return result
+    
 # """
 # print()
 
@@ -70,14 +82,34 @@ def loop_comp():
 def nested_comp():
     exits_to_destination_3 = [[(xit, locations[xit])
                             for xit in exits if loc in exits[xit].values()] for loc in sorted(locations)]
-    for index, loc in enumerate(exits_to_destination_3):
-        print(f"Locations leading to {index}", end="\t")
-        print(loc)
+    # print result before returning
+    for x in exits_to_destination_3:
+        pass
+
+    return exits_to_destination_3
+
 # """    
+
+
+def nested_gen():
+    exits_to_destination_3 = ([(xit, locations[xit])
+                            for xit in exits if loc in exits[xit].values()] for loc in sorted(locations))
+    # print result before returning
+    for x in exits_to_destination_3:
+        pass
+
+    return exits_to_destination_3
+
+
+print(nested_loop())
+print(loop_comp())
+print(nested_comp())
 
 result_1 = timeit.timeit(nested_loop, setup, number=10000)
 result_2 = timeit.timeit(loop_comp, setup, number=10000)
 result_3 = timeit.timeit(nested_comp, setup, number=10000)
+result_4 = timeit.timeit(nested_gen, setup, number=10000)
 print(f"Nested loop:\t{result_1}")
 print(f"Loop and comp:\t{result_2}")
 print(f"Nested comp:\t{result_3}")
+print(f"Nested gen:\t{result_4}")
