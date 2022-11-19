@@ -26,8 +26,8 @@ def map_word():
 
 
 if __name__ == '__main__':
-    print(timeit(comp_caps, setup, number=1000))
-    print(timeit(map_cap, setup, number=1000))
-    print(timeit(word_comp, setup, number=1000))
-    print(timeit(map_word, setup, number=1000))
-    
+    print(timeit(comp_caps, setup, number=10000))
+    print(timeit(map_cap, setup, number=10000))
+    print(timeit(word_comp, setup, number=10000))
+    print(timeit(map_word, setup, number=10000))
+

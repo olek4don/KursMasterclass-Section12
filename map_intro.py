@@ -1,3 +1,6 @@
+import timeit
+
+
 text = "what have the romans ever done for us"
 
 
@@ -28,3 +31,13 @@ if __name__ == '__main__':
     print(map_caps())
     print(comp_words())
     print(map_words())
+
+    print(timeit.timeit(comp_caps, number=10000))
+    print(timeit.timeit(map_caps, number=10000))
+    print(timeit.timeit(comp_words, number=10000))
+    print(timeit.timeit(map_words, number=10000))
+    
+    # print(timeit.timeit("comp_caps()", setup="from map_intro import comp_caps", number=10000))
+    # print(timeit.timeit("map_caps()", setup="from map_intro import map_caps", number=10000))
+    # print(timeit.timeit("comp_words()", setup="from map_intro import comp_words", number=10000))
+    # print(timeit.timeit("map_words()", setup="from map_intro import map_words", number=10000))
